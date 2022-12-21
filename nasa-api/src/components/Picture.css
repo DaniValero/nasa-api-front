@@ -1,0 +1,46 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.potd {
+    max-width: 45vw;
+    margin: 30px auto;
+    
+  
+    border: 5px solid hsl(0, 0%, 40%);
+    
+    
+    padding: 5px;
+    background: hsl(0, 0%, 20%);
+    
+    
+    outline: 5px solid hsl(0, 0%, 60%);
+    
+
+    box-shadow:
+        0 0 0 10px hsl(0, 0%, 80%),
+        0 0 0 15px hsl(0, 0%, 90%);
+
+
+}
+
+h2{
+    color:whitesmoke;
+    margin: 15px auto;
+}
+
+h3 {
+    color:whitesmoke;
+    margin: 5px auto; 
+}
+
+p{
+    color:whitesmoke;
+    align-content: center;
+    margin: 5px auto;
+    font-size: 14px;
+    width: 80%;
+}

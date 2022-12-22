@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './Picture.css'
+import './global.css'
 
 const Picture = () => {
     const [img, setImg] = useState("")
@@ -16,7 +16,7 @@ const Picture = () => {
 
     return(
         <>
-        <div className='container'>
+        <div className='container-picture'>
             <h2>Picture of the Day</h2>
               <img  className="potd" src={img.url} alt="Nasa pic of the day"/>
                 <h3>{img.title}</h3>

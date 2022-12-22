@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Map from '../components/Map'
+import '../components/global.css'
+import {Link} from 'react-router-dom'
+
 
 const Landing = () => {
 
@@ -37,19 +40,23 @@ const Landing = () => {
     
     return (
         <>
-        <h2>Buscar asteroides</h2>
-        <form className='buscar'>
-            <input type= "text" value={input} onChange={(event) => setInput(event.target.value)}/>
-                
-                <select id="filter" name="filter" onSubmit={(event) => console.log(event.target.value)}>
-                    <option value ="null" disabled>Filtrar por:</option>
-                    <option value="masa">Peso</option>
-                    <option value="clase">Clase</option>
-                </select>
-                
-                
-            <button onClick={(e) => findLanding(e)}>Buscar</button>
-        </form>
+        <div className='wrapper-landings'>
+            <h2>Buscar asteroides</h2>
+            <form className='buscar'>
+                <input type= "text" value={input} onChange={(event) => setInput(event.target.value)}/>
+                    
+                    <select id="filter" name="filter" onSubmit={(event) => console.log(event.target.value)}>
+                        <option value ="null" disabled>Filtrar por:</option>
+                        <option value="masa">Peso</option>
+                        <option value="clase">Clase</option>
+                    </select>
+                    
+                    
+                <button onClick={(e) => findLanding(e)}>Buscar</button>
+            </form>
+
+            <Link to={`/landing/list`} className='control-panel-link'>Panel de control</Link>
+        </div>
 
     
         <Map landings={landings}/>

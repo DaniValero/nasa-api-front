@@ -4,6 +4,8 @@ import './index.css';
 import Potd from "./routes/Potd";
 import Landing from "./routes/Landing"
 import Neas from './routes/Neas'
+import Cplandings from './routes/Cplandings'
+import Cpneas from './routes/Cpneas'
 
 import {
   createBrowserRouter,
@@ -25,9 +27,19 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
+        path: "/landing/list",
+        element: <Cplandings />,
+      },
+      {
         path: "/neas",
         element: <Neas />,
-      }
+      },
+      {
+        path: "/neas/list",
+        element: <Cpneas />,
+      },
+      
+      
     ],
   },
 ]);

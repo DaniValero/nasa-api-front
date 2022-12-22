@@ -9,7 +9,7 @@ margin: 20px 10px;
     background-color: rgb(20, 20, 20)
 }
 
-.container {
+.container-header {
 justify-content:space-between;
 display: flex;
 flex-direction: row;
@@ -18,7 +18,7 @@ background-color: rgb(29, 29, 29);
 
 
 
-.wrapper {
+.wrapper-header {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -27,7 +27,7 @@ background-color: rgb(29, 29, 29);
 
 
 
-h1{
+.h1-header{
     margin: 10px;
     color:whitesmoke;
 

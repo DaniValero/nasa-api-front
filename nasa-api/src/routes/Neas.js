@@ -1,24 +1,32 @@
-import React, {useState} from 'react'
-import Map from '../components/Map'
+import React, {useState, useEffect} from 'react'
+import Card from '../components/Card'
+import '../components/global.css'
+import {Link} from 'react-router-dom'
+
 
 const Neas = () => {
 
-    const [input, setInput] = useState("")
-    const [neas, setNeas] = useState([])
+    const [neas,setNeas] = useState([])
 
-    const findLanding = (e) => {
-        e.preventDefault(e)
-        setInput(input)
-        setInput("")
-    }
+    useEffect(() => {
+        const getData = async () =>{
+            const resp = await fetch(`https://nasa-api-lsnw.onrender.com/api/astronomy/neas`);
+            const data = await resp.json();
+            setNeas(data)
+            console.log(neas)
+        }
+        getData();
+    }, [])
     
+
+
     return (
         <>
-        <h2>Buscar NEAs</h2>
-        <form className='buscar'>
-            <input type= "text" value={input} onChange={(event) => setInput(event.target.value)}/>
-            <button onClick={(e) => findLanding(e)}>Buscar</button>
-        </form>
+        <div className='wrapper-landings'>
+        <h2>NEAs descubiertos</h2>
+        <Link to={`/neas/list`} className='control-panel-link'>Panel de control</Link>
+        <Card neas={neas}/>
+        </div>
         </>
     )
 }
